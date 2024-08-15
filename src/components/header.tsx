@@ -4,7 +4,7 @@ import Logo from "./vector/logo";
 export default function Header() {
   return (
     <header className="w-full px-8 py-6 border-b border-primary-400">
-      <div className="flex justify-between">
+      <div className="flex justify-center lg:justify-between">
         <Link href="/">
           <Logo />
         </Link>
@@ -17,7 +17,7 @@ export default function Header() {
 
 function Navigation() {
   return (
-    <nav>
+    <nav className="hidden lg:block">
       <ul className="flex gap-16 text-description font-medium">
         <li>
           <Link href="/">Home</Link>
