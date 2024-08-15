@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import formsPlugin from "@tailwindcss/forms";
 
 const config: Config = {
   content: [
@@ -8,13 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: {
+          50: "var(--clr-primary-50)",
+          400: "var(--clr-primary-400)",
+          500: "var(--clr-primary-500)",
+          600: "var(--clr-primary-600)",
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [formsPlugin],
 };
 export default config;

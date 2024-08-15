@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --clr-primary-50: #ffffff;
+  --clr-primary-400: #e5e7eb;
+  --clr-primary-500: #6c727f;
+  --clr-primary-600: #121826;
+}
+
+body {
+  @apply font-light text-primary-600 flex flex-col min-h-screen;
+}
+
+/* clears the 'X' from Internet Explorer */
+input.hide-clear[type="search"]::-ms-clear,
+input.hide-clear[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input.hide-clear[type="search"]::-webkit-search-decoration,
+input.hide-clear[type="search"]::-webkit-search-cancel-button,
+input.hide-clear[type="search"]::-webkit-search-results-button,
+input.hide-clear[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.title {
+  @apply text-4xl font-semibold;
+}
+
+.description {
+  @apply text-sm font-medium;
+}
+
+.description-lg {
+  @apply font-medium;
+}
+
+.small {
+  @apply text-xs font-medium;
+}
