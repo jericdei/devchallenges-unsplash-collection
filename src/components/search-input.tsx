@@ -24,9 +24,7 @@ export default function SearchInput({
   return (
     <div className={cn("relative w-full", className)}>
       <input
-        className={cn(
-          "hide-clear w-full rounded-lg shadow-sm border-primary-400 py-3 pl-4 pr-12 placeholder:text-sm focus:ring-0 focus:outline-none focus:border-primary-400"
-        )}
+        className="hide-clear w-full rounded-lg shadow-sm border-primary-400 py-3 pl-4 pr-12 placeholder:text-sm focus:ring-0 focus:outline-none focus:border-primary-400"
         placeholder="Enter your keywords..."
         type="search"
         defaultValue={searchParams.get("q") || ""}
