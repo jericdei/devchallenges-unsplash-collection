@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Be_Vietnam_Pro } from "next/font/google"
 import "../globals.css"
-import Header from "@/components/header"
+import Header from "@/components/header/header"
 import { cn } from "@/lib/utils"
 
 const beVietnamPro = Be_Vietnam_Pro({

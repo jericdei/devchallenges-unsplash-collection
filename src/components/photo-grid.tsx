@@ -6,7 +6,16 @@ import MasonryContainer from "./masonry-container"
 export default async function PhotoGrid({ query }: { query: string }) {
   const photos = await searchPhotos(query)
 
-  await setTimeout(1000)
+  if (photos?.results.length === 0) {
+    return (
+      <div className="grid h-96 w-full place-items-center">
+        <p>
+          No photos found for <em>&quot;{query}&quot;</em>. Try a different
+          query.
+        </p>
+      </div>
+    )
+  }
 
   return (
     <MasonryContainer>
