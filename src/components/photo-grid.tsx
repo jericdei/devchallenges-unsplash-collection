@@ -16,8 +16,8 @@ export default async function PhotoGrid({ query }: { query: string }) {
           className="h-auto rounded-lg"
           src={photo.urls.thumb}
           alt={photo.description ?? photo.id}
-          width={500}
-          height={500}
+          width={800}
+          height={800}
           loading="eager"
         />
       ))}
