@@ -2,6 +2,7 @@ import { searchPhotos } from "@/services/photo.service"
 import Image from "next/image"
 import { setTimeout } from "timers/promises"
 import MasonryContainer from "./masonry-container"
+import Link from "next/link"
 
 export default async function PhotoGrid({ query }: { query: string }) {
   const photos = await searchPhotos(query)
@@ -20,15 +21,20 @@ export default async function PhotoGrid({ query }: { query: string }) {
   return (
     <MasonryContainer>
       {photos?.results.map(photo => (
-        <Image
+        <Link
+          className="block h-auto rounded-lg"
           key={photo.id}
-          className="h-auto rounded-lg"
-          src={photo.urls.thumb}
-          alt={photo.description ?? photo.id}
-          width={800}
-          height={800}
-          loading="eager"
-        />
+          href={`/image/${photo.id}`}
+        >
+          <Image
+            className="rounded-lg"
+            src={photo.urls.thumb}
+            alt={photo.description ?? photo.id}
+            width={800}
+            height={800}
+            loading="eager"
+          />
+        </Link>
       ))}
     </MasonryContainer>
   )
