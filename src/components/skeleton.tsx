@@ -1,8 +1,8 @@
-import { cn } from "@/lib/utils";
-import { HTMLAttributes } from "react";
+import { cn } from "@/lib/utils"
+import { HTMLAttributes } from "react"
 
 interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
-  height?: string;
+  height?: string
 }
 
 export default function Skeleton({
@@ -12,9 +12,9 @@ export default function Skeleton({
 }: SkeletonProps) {
   return (
     <div
-      className={cn("bg-primary-400 animate-pulse rounded-lg", className)}
+      className={cn("animate-pulse rounded-lg bg-primary-400", className)}
       style={{ height }}
       {...props}
     ></div>
-  );
+  )
 }

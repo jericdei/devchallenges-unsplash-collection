@@ -1,21 +1,21 @@
-import MasonryContainer from "@/components/masonry-container";
-import PhotoGrid from "@/components/photo-grid";
-import SearchInput from "@/components/search-input";
-import Skeleton from "@/components/skeleton";
-import { Suspense } from "react";
+import MasonryContainer from "@/components/masonry-container"
+import PhotoGrid from "@/components/photo-grid"
+import SearchInput from "@/components/search-input"
+import Skeleton from "@/components/skeleton"
+import { Suspense } from "react"
 
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Record<string, string>;
+  searchParams: Record<string, string>
 }) {
-  const { q } = searchParams;
+  const { q } = searchParams
 
   return (
     <main>
-      <section className="h-24 bg-[url('/gradient.png')] bg-no-repeat sticky top-0 z-10">
+      <section className="sticky top-0 z-10 h-24 bg-[url('/gradient.png')] bg-no-repeat">
         <SearchInput
-          className="w-4/5 md:w-3/4 lg:w-1/2 absolute left-1/2 -bottom-1/2 -translate-y-1/2 -translate-x-1/2"
+          className="absolute -bottom-1/2 left-1/2 w-4/5 -translate-x-1/2 -translate-y-1/2 md:w-3/4 lg:w-1/2"
           defaultValue={q}
         />
       </section>
@@ -24,7 +24,7 @@ export default async function Page({
         <PhotoGrid query={q} />
       </Suspense>
     </main>
-  );
+  )
 }
 
 function PhotoGridSkeleton() {
@@ -38,5 +38,5 @@ function PhotoGridSkeleton() {
         />
       ))}
     </MasonryContainer>
-  );
+  )
 }

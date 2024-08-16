@@ -1,16 +1,16 @@
-import { searchPhotos } from "@/services/photo.service";
-import Image from "next/image";
-import { setTimeout } from "timers/promises";
-import MasonryContainer from "./masonry-container";
+import { searchPhotos } from "@/services/photo.service"
+import Image from "next/image"
+import { setTimeout } from "timers/promises"
+import MasonryContainer from "./masonry-container"
 
 export default async function PhotoGrid({ query }: { query: string }) {
-  const photos = await searchPhotos(query);
+  const photos = await searchPhotos(query)
 
-  await setTimeout(1000);
+  await setTimeout(1000)
 
   return (
     <MasonryContainer>
-      {photos?.results.map((photo) => (
+      {photos?.results.map(photo => (
         <Image
           key={photo.id}
           className="h-auto rounded-lg"
@@ -22,5 +22,5 @@ export default async function PhotoGrid({ query }: { query: string }) {
         />
       ))}
     </MasonryContainer>
-  );
+  )
 }

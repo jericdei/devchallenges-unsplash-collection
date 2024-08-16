@@ -1,4 +1,4 @@
-import React, { SVGProps } from "react";
+import React, { SVGProps } from "react"
 
 export default function Search({ className }: SVGProps<SVGSVGElement>) {
   return (
@@ -18,5 +18,5 @@ export default function Search({ className }: SVGProps<SVGSVGElement>) {
         strokeLinecap="round"
       />
     </svg>
-  );
+  )
 }

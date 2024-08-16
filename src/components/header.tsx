@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Logo from "./vector/logo";
+import Link from "next/link"
+import Logo from "./vector/logo"
 
 export default function Header() {
   return (
-    <header className="w-full px-8 py-6 border-b border-primary-400">
+    <header className="w-full border-b border-primary-400 px-8 py-6">
       <div className="flex justify-center lg:justify-between">
         <Link href="/">
           <Logo />
@@ -12,13 +12,13 @@ export default function Header() {
         <Navigation />
       </div>
     </header>
-  );
+  )
 }
 
 function Navigation() {
   return (
     <nav className="hidden lg:block">
-      <ul className="flex gap-16 text-description font-medium">
+      <ul className="text-description flex gap-16 font-medium">
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -27,5 +27,5 @@ function Navigation() {
         </li>
       </ul>
     </nav>
-  );
+  )
 }
