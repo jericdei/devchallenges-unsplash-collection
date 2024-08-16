@@ -24,7 +24,7 @@ export default async function PhotoGrid({ query }: { query: string }) {
         <Link
           className="block h-auto rounded-lg"
           key={photo.id}
-          href={`/image/${photo.id}`}
+          href={`/photo/${photo.id}`}
         >
           <Image
             className="rounded-lg"

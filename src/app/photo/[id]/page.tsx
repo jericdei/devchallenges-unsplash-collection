@@ -21,7 +21,7 @@ export default async function ImageDetailsPage({
   return (
     <div className="p-16">
       <div className="flex gap-8">
-        <div className="w-1/3">
+        <div className="w-1/2">
           <Image
             className="h-auto w-full rounded-md"
             src={photo.urls.full}
