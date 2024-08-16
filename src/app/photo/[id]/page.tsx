@@ -1,11 +1,11 @@
 import Button from "@/components/button"
+import CollectionList from "@/components/collection/collection-list"
 import PhotoActions from "@/components/photo-actions"
 import UserAvatar from "@/components/user/user-avatar"
-import Download from "@/components/vector/download"
-import Plus from "@/components/vector/plus"
 import { findPhotoById } from "@/services/photo.service"
 import moment from "moment"
 import Image from "next/image"
+import Link from "next/link"
 
 export default async function ImageDetailsPage({
   params,
@@ -15,7 +15,17 @@ export default async function ImageDetailsPage({
   const photo = await findPhotoById(params.id)
 
   if (!photo) {
-    return <div>Photo not found.</div>
+    return (
+      <div className="grid h-96 place-items-center text-center">
+        <div className="space-y-8">
+          <p>Photo not found.</p>
+
+          <Link href="/" className="mt-8 block">
+            <Button>Back to Homepage</Button>
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -25,7 +35,7 @@ export default async function ImageDetailsPage({
           <Image
             className="h-auto w-full rounded-md"
             src={photo.urls.full}
-            alt={photo.description}
+            alt={photo.description || photo.id}
             width={800}
             height={800}
             priority
@@ -41,6 +51,7 @@ export default async function ImageDetailsPage({
             </small>
 
             <PhotoActions photo={photo} />
+            <CollectionList collections={photo.current_user_collections} />
           </div>
         </div>
       </div>
